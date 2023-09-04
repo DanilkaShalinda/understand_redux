@@ -1,20 +1,29 @@
 import store from "./store";
-const unsubscribe=store.subscribe(()=>{
-    console.log("store changed !!!",store.getState())
-})
-store.dispatch({
-    type:"bugAdded",
-    payload:{
-        description:"Bug1"
-    }
-})
+import customStore from  "./customStore"
 
-store.dispatch({
-    type:"bugResolved",
-    payload:{
-        resolved:true
-    }
-})
+
+customStore.state=[55,8,4,5,6]
+console.log(customStore.getState())
+// console.log(customStore.state)
+
+
+
+// const unsubscribe=store.subscribe(()=>{
+//     console.log("store changed !!!",store.getState())
+// })
+// store.dispatch({
+//     type:"bugAdded",
+//     payload:{
+//         description:"Bug1"
+//     }
+// })
+//
+// store.dispatch({
+//     type:"bugResolved",
+//     payload:{
+//         resolved:true
+//     }
+// })
 
 // store.dispatch({
 //     type:"bugRemoved",
@@ -23,4 +32,3 @@ store.dispatch({
 //     }
 // })
 // unsubscribe();
-console.log(store.getState())
